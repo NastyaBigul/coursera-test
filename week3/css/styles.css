@@ -1,0 +1,58 @@
+<style>  
+	/********** Base styles **********/ 
+	* { 
+		box-sizing: border-box; 
+		font-family: Helvetica;
+	}
+	a {
+		color: black;
+	}
+	.content {
+		background-color: gray;
+		color: black;/**/
+		border: 1px solid gray;
+		padding: 0px 10px 10px 10px;
+		margin: 15px 0px 15px 0px;
+	}  
+	/********** End of base styles **********/
+	
+	/********** Header styles **********/
+	#header-nav {
+		border-radius: 0;
+		border: 0;
+		width: 100%;
+		background-color: gray;
+	}
+	.navbar-header {
+		background-color: gray;
+	}
+	.navbar-brand {
+		font-weight: bold;
+		font-size: 1.5em;
+	}
+	.navbar-brand a:hover, .navbar-brand a:focus {
+		text-decoration: none;
+	}
+	#nav-list {
+		margin: 0px;
+	}
+	#nav-list a{
+		background-color: white;
+		color: black;
+		text-align: center;
+		border: 1px solid gray;
+		margin: 0px;
+	}
+	.navbar-collapse{
+		padding: 0px;
+		margin: 0px;
+	}
+	#nav-list a:hover{
+		background: gray;
+	}
+	.navbar-header button.navbar-toggle, .navbar-header .icon-bar {
+		border: 1px solid black;
+	}
+	/********** End of header styles **********/
+	
+</style> 
