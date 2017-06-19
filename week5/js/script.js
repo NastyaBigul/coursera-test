@@ -98,6 +98,7 @@ function buildAndShowHomeHTML (categories) {
       // Pay attention to what type of data that function returns vs what the chosenCategoryShortName
       // variable's name implies it expects.
       var chosenCategory = chooseRandomCategory(categories);
+      console.log(chosenCategory); //just to show the result
       var chosenCategoryShortName = chosenCategory.short_name;
 
       // TODO: STEP 3: Substitute {{randomCategoryShortName}} in the home html snippet with the
@@ -117,6 +118,18 @@ function buildAndShowHomeHTML (categories) {
       // Use the existing insertHtml function for that purpose. Look through this code for an example
       // of how to do that.
       insertHtml("#main-content", homeHtmlToInsertIntoMainPage);
+
+      $ajaxUtils.sendGetRequest(
+        categoryHtml,
+        function (categoryHtml) {
+          var homeHtmlToInsertIntoMainPage =
+            buildCategoriesViewHtml(categories,
+                                    categoriesTitleHtml,
+                                    categoryHtml);
+          insertHtml("#main-content", homeHtmlToInsertIntoMainPage);
+        },
+        false);
+
     },
     false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
 }
