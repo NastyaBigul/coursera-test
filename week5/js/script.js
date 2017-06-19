@@ -114,23 +114,11 @@ function buildAndShowHomeHTML (categories) {
       // it into the home html snippet.
       //
       var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "randomCategoryShortName", chosenCategoryShortName);
-
+      console.log(homeHtmlToInsertIntoMainPage);
       // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
       // Use the existing insertHtml function for that purpose. Look through this code for an example
       // of how to do that.
       insertHtml("#main-content", homeHtmlToInsertIntoMainPage);
-
-      $ajaxUtils.sendGetRequest(
-        categoryHtml,
-        function (categoryHtml) {
-          var homeHtmlToInsertIntoMainPage =
-            buildCategoriesViewHtml(categories,
-                                    categoriesTitleHtml,
-                                    categoryHtml);
-          insertHtml("#main-content", homeHtmlToInsertIntoMainPage);
-        },
-        false);
-
     },
     false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
 }
